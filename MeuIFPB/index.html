@@ -67,10 +67,12 @@
       </tr>
       </table>
 
-      <form>
+      <form action="localhost:5000/login" method="post">
+        <label for="login">Usuário: </label>
         <input type="text" name="login" placeholder="Login"> <br>
-        <input type="Password" name="Senha" placeholder="Senha"> <br>
-        <input type="submit" name="Butãu" value="Confirmar"> <br>
+        <label for="senha">Senha: </label>
+        <input type="Password" name="senha" placeholder="Senha"> <br>
+        <input type="submit" name="Confirmar" value="Confirmar"> <br>
       </form>
   </body>
 </html>
