@@ -39,3 +39,20 @@ footer{
   color: white;
 
 }
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #286DA8;
+    border-color: #286DA8;
+}
+.btn:hover {
+    color: #286DA8;
+    text-decoration: none;
+}
+[type="button"]:not(:disabled), [type="reset"]:not(:disabled), [type="submit"]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+.btn-block {
+    display: block;
+    width: 100%;
+}
