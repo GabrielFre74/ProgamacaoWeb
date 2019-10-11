@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Exercício</title>
+  </head>
+  <body>
+    <table border="2" bordercolor="blue">
+      <tr>
+        <th>Produto</th>
+        <th>Preço (R$)</th>
+        <th>Imagem</th>
+      </tr>
+      <tr>
+        <td>Feijão</td>
+        <td>4,20</td>
+        <td><img src="Imagem/feijao2.jpg"></td>
+      </tr>
+      <tr>
+        <td>Arroz</td>
+        <td>3,50</td>
+        <td><img src="Imagem/arroz2.jpg"></td>
+      </tr>
+    </table>
+
+    <table border="2" bordercolor="blue">
+      <tr>
+        <th>Produto</th>
+        <th>Preço (R$)</th>
+        <th>Imagem</th>
+      </tr>
+      <tr>
+        <td>Feijão</td>
+        <td rowspan="2">4,20</td>
+        <td><img src="Imagem/feijao2.jpg"></td>
+      </tr>
+      <tr>
+        <td>Arroz</td>
+        <td><img src="Imagem/arroz2.jpg"></td>
+      </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <br>
+    <form>
+      Nome: <input type="text" name="nome"> <br>
+
+      Endereço: <input type="text" name="end"> <br>
+
+      Estado: <select name="estado">
+        <option value="Null"></option>
+        <option value="PB">Paraíba</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="PE">Pernanbuco</option>
+        <option value="SE">Sergipe</option>
+        <option value="AL">Alagoas</option>
+      </select> <br>
+
+      Sexo: <input type="radio" name="sexo" value="M">Masculino
+      <input type="radio" name="sexo" value="F">Feminino
+      <input type="radio" name="sexo" value="NB">Não Binário<br>
+
+      Matérias Preferidas: <input type="checkbox" name="MP" value="Web">Progamação Web
+      <input type="checkbox" name="MP" value="TE">Tópicos Especiais
+      <input type="checkbox" name="MP" value="Bio">Biologia
+      <input type="checkbox" name="MP" value="Sc">Sociologia <br>
+
+      Resumo de suas habilidades: <textarea name="habilidades" rows="4" cols="30"></textarea> <br>
+
+      <input type="submit" name="botao" value="Enviar">
+    </form>
+
+    <form>
+      <table border="2" bordercolor="blue">
+        <tr>
+          <th colspan="2">Formulário de Cadastamento</th>
+        </tr>
+        <tr>
+          <td>Nome:</td>
+          <td><input type="text" name="nome"></td>
+        </tr>
+        <tr>
+          <td>Endereço:</td>
+          <td><input type="text" name="end"></td>
+        </tr>
+        <tr>
+          <td>Estado:</td>
+          <td><select name="estado">
+            <option value="Null"></option>
+            <option value="PB">Paraíba</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="PE">Pernanbuco</option>
+            <option value="SE">Sergipe</option>
+            <option value="AL">Alagoas</option>
+          </select></td>
+        </tr>
+        <tr>
+          <td>Sexo:</td>
+          <td><input type="radio" name="sexo" value="M">Masculino
+          <input type="radio" name="sexo" value="F">Feminino
+          <input type="radio" name="sexo" value="NB">Não Binário</td>
+        </tr>
+        <tr>
+          <td>Matérias Preferidas:</td>
+          <td><input type="checkbox" name="MP" value="Web">Progamação Web
+          <input type="checkbox" name="MP" value="TE">Tópicos Especiais
+          <input type="checkbox" name="MP" value="Bio">Biologia
+          <input type="checkbox" name="MP" value="Sc">Sociologia</td>
+        </tr>
+        <tr>
+          <td>Resumo de suas habilidades:</td>
+          <td><textarea name="habilidades" rows="4" cols="30"></textarea></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" name="botao" value="Enviar"></td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

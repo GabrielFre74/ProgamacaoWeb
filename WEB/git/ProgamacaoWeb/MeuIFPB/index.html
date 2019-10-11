@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> Testando imagens </title>
+
+    <style>
+      table{
+        border: 1px ridge #D8BFD8;
+      }
+      tr, td{
+        border-left: 5px ridge #4169E1;
+        border-right: 5px ridge #C71585;
+        border-top: 5px dotted #A0522D;
+        border-bottom: 5xp dotted #FFD700;
+        border-color: 5xp dotted #FA8072;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="http://www.ifpb.edu.br/">
+      <img src='Imagem/logo.png'/>
+    </a>
+    <img src="https://i.pinimg.com/736x/90/7c/75/907c75045fb0ee822a6515dd1f437f28.jpg">
+    <img src="https://scontent.cdninstagram.com/vp/56fc32dae29ee2a90f2891bb6cd497b2/5D72C2CD/t51.2885-15/e35/c0.30.320.320a/44231290_208399160057489_8251646586176745317_n.jpg?_nc_ht=scontent-sea1-1.cdninstagram.com">
+    <img src="https://media1.tenor.com/images/bf3bea5a9ef9e144ce4d8dab20bca4d2/tenor.gif?itemid=8347103">
+    <img src="https://eaisurgiuokpop.files.wordpress.com/2017/10/capturar15.png?w=656">
+    <table border="2">
+      <tr>
+        <td> Nome </td>
+        <td> Nasc. </td>
+        <td> End. </td>
+      </tr>
+      <tr>
+        <td> Gabriel </td>
+        <td> 2002 </td>
+        <td> Guarabira </td>
+      </tr>
+      <tr>
+        <td> Davvi </td>
+        <td> 2001 </td>
+        <td> Alagoa Grande </td>
+      </tr>
+      <tr>
+        <td> Beatriz </td>
+        <td> 2001 </td>
+        <td> Pirpirituba </td>
+      </tr>
+    </table>
+    <table border="2">
+      <tr>
+        <th> Aluno </th>
+        <th> Nota </th>
+        <th> Situação </th>
+      </tr>
+      <tr>
+        <td> José </td>
+        <td> 8.5 </td>
+        <td rowspan="3"> <b> Aprovado </b> </td>
+      </tr>
+      <tr>
+        <td> Maria </td>
+        <td> 9.0 </td>
+      </tr>
+      <tr>
+        <td colspan="2"> Total 17.5 </td>
+      </tr>
+      </table>
+
+      <form action="localhost:5000/login" method="post">
+        <label for="login">Usuário: </label>
+        <input type="text" name="login" placeholder="Login"> <br>
+        <label for="senha">Senha: </label>
+        <input type="Password" name="senha" placeholder="Senha"> <br>
+        <input type="submit" name="Confirmar" value="Confirmar"> <br>
+      </form>
+  </body>
+</html>
