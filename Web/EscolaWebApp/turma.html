@@ -56,10 +56,10 @@
 
       </header>
 
-      <main ng-controller="EscolaController">
-        <h6>Você está em: <a href="index.html">Início</a> >> <a href="escola.html">Escola</a></h6>
+      <main ng-controller="TurmaController">
+        <h6>Você está em: <a href="index.html">Início</a> >> <a href="turma.html">Turma</a></h6>
 
-        <form action="http://localhost:5000/aluno" method='post' name="escolaForm">
+        <form action="http://localhost:5000/aluno" method='post' name="turmaForm">
 
           <!-- Nome -->
 
@@ -67,16 +67,16 @@
               <label for='nome'>Nome:</label>
               <input type='text' ng-model='nome' name='nome' class="form-control" required ng-minlength="5" ng-maxlength="45">
 
-              <div ng-show="escolaForm.nome.$error.required && escolaForm.nome.$dirty" class="alert alert-danger">
-                Por favor, insira o nome da sua escola!
+              <div ng-show="turmaForm.nome.$error.required && turmaForm.nome.$dirty" class="alert alert-danger">
+                Por favor, insira o nome da turma!
               </div>
 
-              <div ng-show="escolaForm.nome.$error.minlength && escolaForm.nome.$dirty" class="alert alert-danger">
-                O nome da escola deve ter, no mínimo, 5 caracteres!
+              <div ng-show="turmaForm.nome.$error.minlength && turmaForm.nome.$dirty" class="alert alert-danger">
+                O nome da turma deve ter, no mínimo, 5 caracteres!
               </div>
 
-              <div ng-show="escolaForm.nome.$error.maxlength && escolaForm.nome.$dirty" class="alert alert-danger">
-                O nome da escola deve ter, no máximo, 45 caracteres!
+              <div ng-show="turmaForm.nome.$error.maxlength && turmaForm.nome.$dirty" class="alert alert-danger">
+                O nome da turma deve ter, no máximo, 45 caracteres!
               </div>
             </div>
 

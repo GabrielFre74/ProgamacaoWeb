@@ -9,8 +9,17 @@
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/menu.css">
 
+    <!-- Blibioteca do Angular Material -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+
     <!-- AngularJs -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-messages.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+
+    <!-- Angular JS Material -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -45,6 +54,7 @@
         </nav>
       </header>
       <main ng-controller="HomeController">
+        <h6>Você está em: <a href="index.html">Início</a></h6>
         <form name="boasVindasForm">
           <div class="form-group">
             <label for= 'nome'> Nome: </label>
@@ -55,8 +65,12 @@
               Por favor, preencha o campo nome!
             </div>
           </div>
-          <button ng-click="desejarBoasVindas()" class="btn btn-lg btn-primary btn-block">Exibir</button>
-          <h1>{{mensagem}}</h1>
+          <!-- Botões -->
+            <input type= 'reset' name='limpar' value= 'Limpar'
+              class="btn btn-secondary btn-lg btn-block">
+            <button ng-click="cadastrar()"
+              class="btn btn-dark btn-lg btn-block">
+              Cadastrar</button>
         </form>
       </main>
       <footer>

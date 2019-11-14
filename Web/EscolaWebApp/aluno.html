@@ -1,35 +1,55 @@
 <!DOCTYPE html>
 <html ng-app="EscolaWebApp">
-  <head>
-    <meta charset="utf-8">
-    <title>Página Inicial</title>
-    <link rel="shortcut icon" href="img/ifpb.png">
+<head>
+  <meta charset="utf-8">
+  <title>Página Inicial</title>
+  <link rel="shortcut icon" href="img/ifpb.png">
 
-    <!-- Estilo -->
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" type="text/css" href="css/menu.css">
+  <!-- Estilo -->
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/menu.css">
 
-    <!-- AngularJs -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" type="text/javascript"></script>
+  <!-- Blibioteca do Angular Material -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- AngularJs -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-messages.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
 
-    <!-- EscolaWebApp - Aplicação Angular -->
-    <script src="js/app.js" type="text/javascript"></script>
+  <!-- Angular JS Material -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
 
-  </head>
+  <!-- Moments -->,
+  <script src="https://momentjs.com/downloads/moment.js">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <!-- EscolaWebApp - Aplicação Angular -->
+  <script src="js/app.js" type="text/javascript"></script>
+
+</head>
   <body>
     <div class="meu-container">
+
       <header>
-        <h2><div style="text-align: center;">Cadastros</div></h2>
+
+        <div class="title">
+
+          <center> <h2> <a href="index.html">Cadastros</a> </h2> </center>
+
+        </div>
+
         <nav>
+
           <ul class="navigation">
             <li><a href="turno.html"> Turno </a></li>
             <li><a href="turma.html"> Turma </a></li>
@@ -42,35 +62,115 @@
             <li><a href="aluno.html"> Aluno </a></li>
             <li><a href="index.html"> Inicio </a></li>
           </ul>
+
         </nav>
+
       </header>
+
       <main ng-controller="AlunoController">
+        <h6>Você está em: <a href="index.html">Início</a> >> <a href="aluno.html">Aluno</a></h6>
+
+        <form action="http://localhost:5000/aluno" method='post' name="alunoForm">
+
+          <!-- Nome -->
+
+          <div class="form-group">
+            <label for='nome'>Nome do aluno:</label>
+            <input type='text' ng-model='nome' name='nome' class="form-control"
+            ng-model="aluno.nome"
+             required ng-minlength="10"
+            ng-maxlength="45">
+
+            <div ng-show="alunoForm.nome.$error.required && alunoForm.nome.$dirty" class="alert alert-danger">
+              Por favor, insira o nome do aluno!
+            </div>
+
+            <div ng-show="alunoForm.nome.$error.minlength && alunoForm.nome.$dirty" class="alert alert-danger">
+              Seu nome deve conter, no mínimo, 10 caracteres!
+            </div>
+
+            <div ng-show="alunoForm.nome.$error.maxlength && alunoForm.nome.$dirty" class="alert alert-danger">
+              Seu nome deve conter, no máximo, 45 caracteres!
+            </div>
+          </div>
+
+          <!-- Matrícula -->
+
+          <div class="form-group">
+            <label for='matricula'>Matricula:</label>
+            <input type='text' ng-model='matricula' name='matricula' class="form-control"
+            ng-model="aluno.matricula"
+            required ng-minlength="12"
+            ng-maxlength="12">
+
+            <div ng-show="alunoForm.matricula.$error.required && alunoForm.matricula.$dirty" class="alert alert-danger">
+              Por favor, insira o número da sua matrícula!
+            </div>
+
+            <div ng-show="alunoForm.matricula.$error.minlength && alunoForm.matricula.$dirty" class="alert alert-danger">
+              Sua matrícula deve ter, no mínimo, 12 números!
+            </div>
+
+            <div ng-show="alunoForm.matricula.$error.maxlength && alunoForm.matricula.$dirty" class="alert alert-danger">
+              Sua matrícula deve ter, no máximo, 12 números!
+            </div>
+          </div>
+
+          <!-- CPF -->
+
+          <div class="form-group">
+            <label for='cpf'>CPF:</label>
+            <input type='text' ng-model='cpf' name='cpf' class="form-control"
+            ng-model="aluno.cpf"
+            required ng-minlength="11"
+            ng-maxlength="11">
+
+            <div ng-show="alunoForm.cpf.$error.required && alunoForm.cpf.$dirty" class="alert alert-danger">
+              Por favor, insira o número do seu CPF!
+            </div>
+
+            <div ng-show="alunoForm.cpf.$error.minlength && alunoForm.cpf.$dirty" class="alert alert-danger">
+              Seu CPF deve ter, no mínimo, 11 números! (Sem pontos ou traços)
+            </div>
+
+            <div ng-show="alunoForm.cpf.$error.maxlength && alunoForm.cpf.$dirty" class="alert alert-danger">
+              Seu CPF deve ter, no máximo, 11 números! (Sem pontos ou traços)
+            </div>
+          </div>
+
+          <!-- Data de Nascimento -->
+
+          <div class="form-group">
+            <label for='nascimento'> Data de nascimento: </label>
+            <input type='text' ng-model='nascimento' name='nascimento' placeholder="AAAA-MM-DD" class="form-control"
+            ng-model="aluno.nascimento"
+            required ng-minlength="10"
+            ng-maxlength="10">
+
+            <div ng-show="alunoForm.nascimento.$error.required && alunoForm.nascimento.$dirty" class="alert alert-danger">
+              Por favor, insira sua data de nascimento!
+            </div>
+
+            <div ng-show="alunoForm.nascimento.$error.minlength && alunoForm.nascimento.$dirty" class="alert alert-danger">
+              Sua data de nascimento deve seguir o seguinte formato: AAAA-MM-DD
+            </div>
+
+            <div ng-show="alunoForm.nascimento.$error.maxlength && alunoForm.nascimento.$dirty" class="alert alert-danger">
+              Sua data de nascimento deve seguir o seguinte formato: AAAA-MM-DD
+            </div>
+          </div>
+
+          <!-- Botões -->
+            <input type= 'reset' name='limpar' value= 'Limpar'
+              class="btn btn-secondary btn-lg btn-block">
+            <button ng-click="cadastrar()"
+              class="btn btn-dark btn-lg btn-block">
+              Cadastrar</button>
         </form>
-        <div class="form-group">
-          <label for= 'nome'>Nome do aluno:</label>
-          <input type = 'text' name = 'nome' class="form-control">
-        </div>
 
-        <div class="form-group">
-          <label for= 'matricula'>Matricula:</label>
-          <input type= 'text' name= 'matricula' class="form-control">
-        </div>
-
-        <div class="form-group">
-          <label for= 'cpf'>CPF:</label>
-          <input type= 'text' name= 'cpf' class="form-control">
-        </div>
-
-        <div class="form-group">
-          <label for= 'nascimento'> Data de nascimento: </label>
-          <input type = 'date' name = 'nascimento' class="form-control">
-        </div>
-
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Cadastrar</button>
-        </form>
       </main>
       <footer>
-        Rodapé
+        <div style="text-align: right;">@ Joyce Pinheiro & Gabriel Freitas</div>
       </footer>
     </div>
   </body>
