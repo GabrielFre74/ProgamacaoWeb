@@ -1,97 +1,33 @@
-<!DOCTYPE html>
-<html ng-app="EscolaWebApp">
-<head>
-  <meta charset="utf-8">
-  <title>Página Inicial</title>
-  <link rel="shortcut icon" href="img/ifpb.png">
+<main ng-controller="DisciplinaController">
+  <h6>Você está em: <a href="index.html">Início</a> >> <a href="disciplina.html">Disciplina</a></h6>
 
-  <!-- Estilo -->
-  <link rel="stylesheet" type="text/css" href="css/index.css">
-  <link rel="stylesheet" type="text/css" href="css/menu.css">
+  <form action="http://localhost:5000/aluno" method='post' name="disciplinaForm">
 
-  <!-- AngularJs -->
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js" type="text/javascript"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular-messages.js" type="text/javascript"></script>
+    <!-- Nome -->
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+      <div class="form-group">
+        <label for='nome'>Nome:</label>
+        <input type='text' ng-model='nome' name='nome' class="form-control" required ng-minlength="3" ng-maxlength="45">
 
-  <!-- EscolaWebApp - Aplicação Angular -->
-  <script src="js/app.js" type="text/javascript"></script>
-
-</head>
-  <body>
-    <div class="meu-container">
-
-      <header>
-
-        <div class="title">
-
-          <center> <h2> <a href="index.html">Cadastros</a> </h2> </center>
-
+        <div ng-show="disciplinaForm.nome.$error.required && disciplinaForm.nome.$dirty" class="alert alert-danger">
+          Por favor, insira o nome da sua disciplina!
         </div>
 
-        <nav>
+        <div ng-show="disciplinaForm.nome.$error.minlength && disciplinaForm.nome.$dirty" class="alert alert-danger">
+          O nome da disciplina deve conter, no mínimo, 3 caracteres!
+        </div>
 
-          <ul class="navigation">
-            <li><a href="turno.html"> Turno </a></li>
-            <li><a href="turma.html"> Turma </a></li>
-            <li><a href="professor.html"> Professor </a></li>
-            <li><a href="escola.html"> Escola </a></li>
-            <li><a href="endereco.html"> Endereço </a></li>
-            <li><a href="disciplina.html"> Disciplina </a></li>
-            <li><a href="curso.html"> Curso </a></li>
-            <li><a href="campus.html"> Campus </a></li>
-            <li><a href="aluno.html"> Aluno </a></li>
-            <li><a href="index.html"> Inicio </a></li>
-          </ul>
+        <div ng-show="disciplinaForm.nome.$error.maxlength && disciplinaForm.nome.$dirty" class="alert alert-danger">
+          O nome da disciplina deve conter, no máximo, 45 caracteres!
+        </div>
+      </div>
 
-        </nav>
+      <!-- Botões -->
+        <input type= 'reset' name='limpar' value= 'Limpar'
+          class="btn btn-secondary btn-lg btn-block">
+        <button ng-click="cadastrar()"
+          class="btn btn-dark btn-lg btn-block">
+          Cadastrar</button>
+  </form>
 
-      </header>
-
-      <main ng-controller="DisciplinaController">
-        <h6>Você está em: <a href="index.html">Início</a> >> <a href="disciplina.html">Disciplina</a></h6>
-
-        <form action="http://localhost:5000/aluno" method='post' name="disciplinaForm">
-
-          <!-- Nome -->
-
-            <div class="form-group">
-              <label for='nome'>Nome:</label>
-              <input type='text' ng-model='nome' name='nome' class="form-control" required ng-minlength="3" ng-maxlength="45">
-
-              <div ng-show="disciplinaForm.nome.$error.required && disciplinaForm.nome.$dirty" class="alert alert-danger">
-                Por favor, insira o nome da sua disciplina!
-              </div>
-
-              <div ng-show="disciplinaForm.nome.$error.minlength && disciplinaForm.nome.$dirty" class="alert alert-danger">
-                O nome da disciplina deve conter, no mínimo, 3 caracteres!
-              </div>
-
-              <div ng-show="disciplinaForm.nome.$error.maxlength && disciplinaForm.nome.$dirty" class="alert alert-danger">
-                O nome da disciplina deve conter, no máximo, 45 caracteres!
-              </div>
-            </div>
-
-            <!-- Botões -->
-              <input type= 'reset' name='limpar' value= 'Limpar'
-                class="btn btn-secondary btn-lg btn-block">
-              <button ng-click="cadastrar()"
-                class="btn btn-dark btn-lg btn-block">
-                Cadastrar</button>
-        </form>
-
-      </main>
-      <footer>
-        <div style="text-align: right;">@ Joyce Pinheiro & Gabriel Freitas</div>
-      </footer>
-    </div>
-  </body>
-</html>
+</main>

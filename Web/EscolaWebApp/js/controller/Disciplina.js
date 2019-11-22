@@ -1,19 +1,19 @@
-var alunoController = function($scope, $mdToast, alunoApi) {
+var disciplinaController = function($scope, $mdToast, disciplinaApi) {
 
-  $scope.aluno = {};
+  $scope.disciplina = {};
 
   $scope.cadastrar = function() {
-    // Criar uma cópia do aluno do $scope.
-    let aluno = angular.copy($scope.aluno);
+    // Criar uma cópia do disciplina do $scope.
+    let disciplina = angular.copy($scope.disciplina);
 
     // Converter formato da data: brazilian -> american.
-    var data = moment(aluno.nascimento, "DD/MM/YYYY");
-    aluno.nascimento = data.format("YYYY-MM-DD");
+    var data = moment(disciplina.nascimento, "DD/MM/YYYY");
+    disciplina.nascimento = data.format("YYYY-MM-DD");
 
-    alunoApi.cadastrar(aluno)
+    disciplinaApi.cadastrar(disciplina)
       .then(function(response) {
         var toast = $mdToast.simple()
-            .textContent('O aluno foi cadastrado com sucesso!')
+            .textContent('O disciplina foi cadastrado com sucesso!')
             .position('top right')
             .action('OK')
             .hideDelay(6000);
@@ -33,15 +33,15 @@ var alunoController = function($scope, $mdToast, alunoApi) {
 
   let limparFormulario = function () {
 
-        // Reinicializa a variável aluno.
-        angular.copy({}, $scope.aluno);
+        // Reinicializa a variável disciplina.
+        angular.copy({}, $scope.disciplina);
 
         // Reinicializa o estado do campo para os eventos e validação.
         // É necessário indicar o atributo name no formulário <form>
-        $scope.alunoForm.$setPristine();
-        $scope.alunoForm.$setUntouched();
-        $scope.alunoForm.$setValidity();
+        $scope.disciplinaForm.$setPristine();
+        $scope.disciplinaForm.$setUntouched();
+        $scope.disciplinaForm.$setValidity();
     }
 }
 
-app.controller('AlunoController', alunoController);
+app.controller('disciplinaController', disciplinaController);
