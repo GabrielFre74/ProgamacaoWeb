@@ -1,33 +1,30 @@
-      <main ng-controller="TurnoController">
-        <h6>Você está em: <a href="index.html">Início</a> >> <a href="turno.html">Turno</a></h6>
+<h6>Você está em: <a href="home.html">Início</a> >> <a href="turno.html">Turno</a></h6>
 
-        <form action="http://localhost:5000/aluno" method='post' name="turnoForm">
+<form name="turnoForm">
 
-          <!-- Nome -->
+  <!-- Nome -->
 
-            <div class="form-group">
-              <label for='nome'>Nome:</label>
-              <input type='text' ng-model='nome' name='nome' class="form-control" required ng-minlength="3" ng-maxlength="10">
+    <div class="form-group">
+      <label for='nome'>Nome:</label>
+      <input type='text' ng-model='nome' name='nome' class="form-control" required ng-minlength="3" ng-maxlength="10">
 
-              <div ng-show="turnoForm.nome.$error.required && turnoForm.nome.$dirty" class="alert alert-danger">
-                Por favor, insira o nome do seu turno!
-              </div>
+      <div ng-show="turnoForm.nome.$error.required && turnoForm.nome.$dirty" class="alert alert-danger">
+        Por favor, insira o nome do seu turno!
+      </div>
 
-              <div ng-show="turnoForm.nome.$error.minlength && turnoForm.nome.$dirty" class="alert alert-danger">
-                O turno deve ter, no mínimo, 3 caracteres!
-              </div>
+      <div ng-show="turnoForm.nome.$error.minlength && turnoForm.nome.$dirty" class="alert alert-danger">
+        O turno deve ter, no mínimo, 3 caracteres!
+      </div>
 
-              <div ng-show="turnoForm.nome.$error.maxlength && turnoForm.nome.$dirty" class="alert alert-danger">
-                O turno deve ter, no máximo, 10 caracteres!
-              </div>
-            </div>
+      <div ng-show="turnoForm.nome.$error.maxlength && turnoForm.nome.$dirty" class="alert alert-danger">
+        O turno deve ter, no máximo, 10 caracteres!
+      </div>
+    </div>
 
-            <!-- Botões -->
-              <input type= 'reset' name='limpar' value= 'Limpar'
-                class="btn btn-secondary btn-lg btn-block">
-              <button ng-click="cadastrar()"
-                class="btn btn-dark btn-lg btn-block">
-                Cadastrar</button>
-        </form>
-
-      </main>
+    <!-- Botões -->
+      <input type= 'reset' name='limpar' value= 'Limpar'
+        class="btn btn-secondary btn-lg btn-block">
+      <button ng-click="cadastrar()"
+        class="btn btn-dark btn-lg btn-block">
+        Cadastrar</button>
+</form>

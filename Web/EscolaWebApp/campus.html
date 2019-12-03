@@ -1,52 +1,49 @@
-<main>
-    <h6>Você está em: <a href="index.html">Início</a> >> <a href="campus.html">Campus</a></h6>
+<h6>Você está em: <a href="home.html">Início</a> >> <a href="campus.html">Campus</a></h6>
 
-    <form action="http://localhost:5000/aluno" method='post' name="campusForm">
+<form name="campusForm">
 
-      <!-- Sigla -->
+  <!-- Sigla -->
 
-        <div class="form-group">
-          <label for='sigla'>Sigla:</label>
-          <input type='text' ng-model='sigla' name='sigla' class="form-control" required ng-minlength="2" ng-maxlength="3">
+    <div class="form-group">
+      <label for='sigla'>Sigla:</label>
+      <input type='text' ng-model='sigla' name='sigla' class="form-control" required ng-minlength="2" ng-maxlength="3">
 
-          <div ng-show="campusForm.sigla.$error.required && campusForm.sigla.$dirty" class="alert alert-danger">
-            Por favor, insira a sigla do seu campus!
-          </div>
+      <div ng-show="campusForm.sigla.$error.required && campusForm.sigla.$dirty" class="alert alert-danger">
+        Por favor, insira a sigla do seu campus!
+      </div>
 
-          <div ng-show="campusForm.sigla.$error.minlength && campusForm.sigla.$dirty" class="alert alert-danger">
-            A sigla deve ter, no mínimo, 2 caracteres!
-          </div>
+      <div ng-show="campusForm.sigla.$error.minlength && campusForm.sigla.$dirty" class="alert alert-danger">
+        A sigla deve ter, no mínimo, 2 caracteres!
+      </div>
 
-          <div ng-show="campusForm.sigla.$error.maxlength && campusForm.sigla.$dirty" class="alert alert-danger">
-            A sigla deve ter, no máximo, 3 caracteres!
-          </div>
-        </div>
+      <div ng-show="campusForm.sigla.$error.maxlength && campusForm.sigla.$dirty" class="alert alert-danger">
+        A sigla deve ter, no máximo, 3 caracteres!
+      </div>
+    </div>
 
-        <!-- Cidade -->
+    <!-- Cidade -->
 
-        <div class="form-group">
-          <label for='cidade'>Cidade:</label>
-          <input type='text' ng-model='cidade' name='cidade' class="form-control" required ng-minlength="2" ng-maxlength="45">
+    <div class="form-group">
+      <label for='cidade'>Cidade:</label>
+      <input type='text' ng-model='cidade' name='cidade' class="form-control" required ng-minlength="2" ng-maxlength="45">
 
-          <div ng-show="campusForm.cidade.$error.required && campusForm.cidade.$dirty" class="alert alert-danger">
-            Por favor, insira o nome da sua cidade!
-          </div>
+      <div ng-show="campusForm.cidade.$error.required && campusForm.cidade.$dirty" class="alert alert-danger">
+        Por favor, insira o nome da sua cidade!
+      </div>
 
-          <div ng-show="campusForm.cidade.$error.minlength && campusForm.cidade.$dirty" class="alert alert-danger">
-            O nome da cidade deve conter, no mínimo, 2 caracteres!
-          </div>
+      <div ng-show="campusForm.cidade.$error.minlength && campusForm.cidade.$dirty" class="alert alert-danger">
+        O nome da cidade deve conter, no mínimo, 2 caracteres!
+      </div>
 
-          <div ng-show="campusForm.cidade.$error.maxlength && campusForm.cidade.$dirty" class="alert alert-danger">
-            O nome da cidade deve conter, no máximo, 45 caracteres!
-          </div>
-        </div>
+      <div ng-show="campusForm.cidade.$error.maxlength && campusForm.cidade.$dirty" class="alert alert-danger">
+        O nome da cidade deve conter, no máximo, 45 caracteres!
+      </div>
+    </div>
 
-        <!-- Botões -->
-          <input type= 'reset' name='limpar' value= 'Limpar'
-            class="btn btn-secondary btn-lg btn-block">
-          <button ng-click="cadastrar()"
-            class="btn btn-dark btn-lg btn-block">
-            Cadastrar</button>
-    </form>
-
-  </main>
+    <!-- Botões -->
+      <input type= 'reset' name='limpar' value= 'Limpar'
+        class="btn btn-secondary btn-lg btn-block">
+      <button ng-click="cadastrar()"
+        class="btn btn-dark btn-lg btn-block">
+        Cadastrar</button>
+</form>

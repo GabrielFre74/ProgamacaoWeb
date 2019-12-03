@@ -44,4 +44,4 @@ var turnoController = function($scope, $mdToast, turnoApi) {
     }
 }
 
-app.controller('turnoController', turnoController);
+app.controller('turnoController', TurnoController);

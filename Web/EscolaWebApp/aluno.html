@@ -1,102 +1,99 @@
-<main>
-  <h6>Você está em: <a href="index.html">Início</a> >> <a href="aluno.html">Aluno</a></h6>
+<h6>Você está em: <a href="home.html">Início</a> >> <a href="aluno.html">Aluno</a></h6>
 
-  <form action="http://localhost:5000/aluno" method='post' name="alunoForm">
+<form name="alunoForm">
 
-    <!-- Nome -->
+  <!-- Nome -->
 
-    <div class="form-group">
-      <label for='nome'>Nome do aluno:</label>
-      <input type='text' ng-model='nome' name='nome' class="form-control"
-      ng-model="aluno.nome"
-       required ng-minlength="10"
-      ng-maxlength="45">
+  <div class="form-group">
+    <label for='nome'>Nome do aluno:</label>
+    <input type='text' ng-model='nome' name='nome' class="form-control"
+    ng-model="aluno.nome"
+     required ng-minlength="10"
+    ng-maxlength="45">
 
-      <div ng-show="alunoForm.nome.$error.required && alunoForm.nome.$dirty" class="alert alert-danger">
-        Por favor, insira o nome do aluno!
-      </div>
-
-      <div ng-show="alunoForm.nome.$error.minlength && alunoForm.nome.$dirty" class="alert alert-danger">
-        Seu nome deve conter, no mínimo, 10 caracteres!
-      </div>
-
-      <div ng-show="alunoForm.nome.$error.maxlength && alunoForm.nome.$dirty" class="alert alert-danger">
-        Seu nome deve conter, no máximo, 45 caracteres!
-      </div>
+    <div ng-show="alunoForm.nome.$error.required && alunoForm.nome.$dirty" class="alert alert-danger">
+      Por favor, insira o nome do aluno!
     </div>
 
-    <!-- Matrícula -->
-
-    <div class="form-group">
-      <label for='matricula'>Matricula:</label>
-      <input type='text' ng-model='matricula' name='matricula' class="form-control"
-      ng-model="aluno.matricula"
-      required ng-minlength="12"
-      ng-maxlength="12">
-
-      <div ng-show="alunoForm.matricula.$error.required && alunoForm.matricula.$dirty" class="alert alert-danger">
-        Por favor, insira o número da sua matrícula!
-      </div>
-
-      <div ng-show="alunoForm.matricula.$error.minlength && alunoForm.matricula.$dirty" class="alert alert-danger">
-        Sua matrícula deve ter, no mínimo, 12 números!
-      </div>
-
-      <div ng-show="alunoForm.matricula.$error.maxlength && alunoForm.matricula.$dirty" class="alert alert-danger">
-        Sua matrícula deve ter, no máximo, 12 números!
-      </div>
+    <div ng-show="alunoForm.nome.$error.minlength && alunoForm.nome.$dirty" class="alert alert-danger">
+      Seu nome deve conter, no mínimo, 10 caracteres!
     </div>
 
-    <!-- CPF -->
+    <div ng-show="alunoForm.nome.$error.maxlength && alunoForm.nome.$dirty" class="alert alert-danger">
+      Seu nome deve conter, no máximo, 45 caracteres!
+    </div>
+  </div>
 
-    <div class="form-group">
-      <label for='cpf'>CPF:</label>
-      <input type='text' ng-model='cpf' name='cpf' class="form-control"
-      ng-model="aluno.cpf"
-      required ng-minlength="11"
-      ng-maxlength="11">
+  <!-- Matrícula -->
 
-      <div ng-show="alunoForm.cpf.$error.required && alunoForm.cpf.$dirty" class="alert alert-danger">
-        Por favor, insira o número do seu CPF!
-      </div>
+  <div class="form-group">
+    <label for='matricula'>Matricula:</label>
+    <input type='text' ng-model='matricula' name='matricula' class="form-control"
+    ng-model="aluno.matricula"
+    required ng-minlength="12"
+    ng-maxlength="12">
 
-      <div ng-show="alunoForm.cpf.$error.minlength && alunoForm.cpf.$dirty" class="alert alert-danger">
-        Seu CPF deve ter, no mínimo, 11 números! (Sem pontos ou traços)
-      </div>
-
-      <div ng-show="alunoForm.cpf.$error.maxlength && alunoForm.cpf.$dirty" class="alert alert-danger">
-        Seu CPF deve ter, no máximo, 11 números! (Sem pontos ou traços)
-      </div>
+    <div ng-show="alunoForm.matricula.$error.required && alunoForm.matricula.$dirty" class="alert alert-danger">
+      Por favor, insira o número da sua matrícula!
     </div>
 
-    <!-- Data de Nascimento -->
-
-    <div class="form-group">
-      <label for='nascimento'> Data de nascimento: </label>
-      <input type='text' ng-model='nascimento' name='nascimento' placeholder="AAAA-MM-DD" class="form-control"
-      ng-model="aluno.nascimento"
-      required ng-minlength="10"
-      ng-maxlength="10">
-
-      <div ng-show="alunoForm.nascimento.$error.required && alunoForm.nascimento.$dirty" class="alert alert-danger">
-        Por favor, insira sua data de nascimento!
-      </div>
-
-      <div ng-show="alunoForm.nascimento.$error.minlength && alunoForm.nascimento.$dirty" class="alert alert-danger">
-        Sua data de nascimento deve seguir o seguinte formato: AAAA-MM-DD
-      </div>
-
-      <div ng-show="alunoForm.nascimento.$error.maxlength && alunoForm.nascimento.$dirty" class="alert alert-danger">
-        Sua data de nascimento deve seguir o seguinte formato: AAAA-MM-DD
-      </div>
+    <div ng-show="alunoForm.matricula.$error.minlength && alunoForm.matricula.$dirty" class="alert alert-danger">
+      Sua matrícula deve ter, no mínimo, 12 números!
     </div>
 
-    <!-- Botões -->
-      <input type= 'reset' name='limpar' value= 'Limpar'
-        class="btn btn-secondary btn-lg btn-block">
-      <button ng-click="cadastrar()"
-        class="btn btn-dark btn-lg btn-block">
-        Cadastrar</button>
-  </form>
+    <div ng-show="alunoForm.matricula.$error.maxlength && alunoForm.matricula.$dirty" class="alert alert-danger">
+      Sua matrícula deve ter, no máximo, 12 números!
+    </div>
+  </div>
 
-</main>
+  <!-- CPF -->
+
+  <div class="form-group">
+    <label for='cpf'>CPF:</label>
+    <input type='text' ng-model='cpf' name='cpf' class="form-control"
+    ng-model="aluno.cpf"
+    required ng-minlength="11"
+    ng-maxlength="11">
+
+    <div ng-show="alunoForm.cpf.$error.required && alunoForm.cpf.$dirty" class="alert alert-danger">
+      Por favor, insira o número do seu CPF!
+    </div>
+
+    <div ng-show="alunoForm.cpf.$error.minlength && alunoForm.cpf.$dirty" class="alert alert-danger">
+      Seu CPF deve ter, no mínimo, 11 números! (Sem pontos ou traços)
+    </div>
+
+    <div ng-show="alunoForm.cpf.$error.maxlength && alunoForm.cpf.$dirty" class="alert alert-danger">
+      Seu CPF deve ter, no máximo, 11 números! (Sem pontos ou traços)
+    </div>
+  </div>
+
+  <!-- Data de Nascimento -->
+
+  <div class="form-group">
+    <label for='nascimento'> Data de nascimento: </label>
+    <input type='text' ng-model='nascimento' name='nascimento' placeholder="AAAA-MM-DD" class="form-control"
+    ng-model="aluno.nascimento"
+    required ng-minlength="10"
+    ng-maxlength="10">
+
+    <div ng-show="alunoForm.nascimento.$error.required && alunoForm.nascimento.$dirty" class="alert alert-danger">
+      Por favor, insira sua data de nascimento!
+    </div>
+
+    <div ng-show="alunoForm.nascimento.$error.minlength && alunoForm.nascimento.$dirty" class="alert alert-danger">
+      Sua data de nascimento deve seguir o seguinte formato: AAAA-MM-DD
+    </div>
+
+    <div ng-show="alunoForm.nascimento.$error.maxlength && alunoForm.nascimento.$dirty" class="alert alert-danger">
+      Sua data de nascimento deve seguir o seguinte formato: AAAA-MM-DD
+    </div>
+  </div>
+
+  <!-- Botões -->
+    <input type= 'reset' name='limpar' value= 'Limpar'
+      class="btn btn-secondary btn-lg btn-block">
+    <button ng-click="cadastrar()"
+      class="btn btn-dark btn-lg btn-block">
+      Cadastrar</button>
+</form>

@@ -1,33 +1,30 @@
-<main ng-controller="ProfessorController">
-  <h6>Você está em: <a href="index.html">Início</a> >> <a href="professor.html">Professor</a></h6>
+<h6>Você está em: <a href="home.html">Início</a> >> <a href="professor.html">Professor</a></h6>
 
-  <form action="http://localhost:5000/aluno" method='post' name="professorForm">
+<form name="professorForm">
 
-    <!-- Nome -->
+  <!-- Nome -->
 
-      <div class="form-group">
-        <label for='noe'>Nome:</label>
-        <input type='text' ng-model='nome' name='nome' class="form-control" required ng-minlength="10" ng-maxlength="45">
+    <div class="form-group">
+      <label for='noe'>Nome:</label>
+      <input type='text' ng-model='nome' name='nome' class="form-control" required ng-minlength="10" ng-maxlength="45">
 
-        <div ng-show="professorForm.nome.$error.required && professorForm.nome.$dirty" class="alert alert-danger">
-          Por favor, insira o nome do professor!
-        </div>
-
-        <div ng-show="professorForm.nome.$error.minlength && professorForm.nome.$dirty" class="alert alert-danger">
-          O nome do professor deve ter, no mínimo, 10 caracteres!
-        </div>
-
-        <div ng-show="professorForm.nome.$error.maxlength && professorForm.nome.$dirty" class="alert alert-danger">
-          O nome do professor deve ter, no máximo, 45 caracteres!
-        </div>
+      <div ng-show="professorForm.nome.$error.required && professorForm.nome.$dirty" class="alert alert-danger">
+        Por favor, insira o nome do professor!
       </div>
 
-      <!-- Botões -->
-        <input type= 'reset' name='limpar' value= 'Limpar'
-          class="btn btn-secondary btn-lg btn-block">
-        <button ng-click="cadastrar()"
-          class="btn btn-dark btn-lg btn-block">
-          Cadastrar</button>
-  </form>
+      <div ng-show="professorForm.nome.$error.minlength && professorForm.nome.$dirty" class="alert alert-danger">
+        O nome do professor deve ter, no mínimo, 10 caracteres!
+      </div>
 
-</main>
+      <div ng-show="professorForm.nome.$error.maxlength && professorForm.nome.$dirty" class="alert alert-danger">
+        O nome do professor deve ter, no máximo, 45 caracteres!
+      </div>
+    </div>
+
+    <!-- Botões -->
+      <input type= 'reset' name='limpar' value= 'Limpar'
+        class="btn btn-secondary btn-lg btn-block">
+      <button ng-click="cadastrar()"
+        class="btn btn-dark btn-lg btn-block">
+        Cadastrar</button>
+</form>
