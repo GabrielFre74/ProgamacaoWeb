@@ -1,0 +1,52 @@
+<!-- escola - Formulário -->
+<form name="escolasForm">
+  <div class="form-group">
+    <!-- Nome -->
+    <label for='nome'> Nome: </label>
+    <input type='text' name='nome' class="form-control" ng-model="escola.nome" ng-minlength="3" ng-maxlength="25">
+    <div>
+      <div ng-show="escolaForm.nome.$error.minlength && escolaForm.nome.$dirty" class="alert alert-danger">
+        Por favor, o Nome não tem o tamanho mínimo válido!
+      </div>
+      <div ng-show="escolaForm.nome.$error.maxlength && escolaForm.nome.$dirty" class="alert alert-danger">
+        Por favor, o Nome não tem o tamanho máximo válido!
+      </div>
+    </div>
+  </div>
+
+  <!-- Botões -->
+  <button type='reset' ng-click="limparBusca()" name='limpar' class="btn btn-secondary btn-lg btn-block">
+    Limpar
+  </button>
+  <button ng-click="listar()" class="btn btn-dark btn-lg btn-block">
+    Listar
+  </button>
+</form>
+
+<!-- Tabela de escolas -->
+<div>
+  <table class="table table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Nome</th>
+        <th scope="col">CPF</th>
+        <th scope="col">Matrícula</th>
+        <th scope="col">Nascimento</th>
+        <th scope="col">Endereco</th>
+        <th scope="col">Curso</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="escola in escolas">
+        <td scope="row">{{escola.id}}</td>
+        <td scope="row">{{escola.nome}}</td>
+        <td scope="row">{{escola.cpf}}</td>
+        <td scope="row">{{escola.matricula}}</td>
+        <td scope="row">{{escola.nascimento}}</td>
+        <td scope="row">{{escola.fk_id_endereco}}</td>
+        <td scope="row">{{escola.fk_id_curso}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,18 @@
+<h6>Você está em: <a href="#/home">Início</a></h6>
+<form name="boasVindasForm">
+  <div class="form-group">
+    <label for= 'nome'> Nome: </label>
+    <input type="text" name="nome" class="form-control" ng-model="nome"
+      required ng-minlength="3" ng-maxlength="25">
+    <div ng-show="boasVindasForm.nome.$invalid && boasVindasForm.nome.$dirty"
+      class="alert alert-danger">
+      Por favor, preencha o campo nome!
+    </div>
+  </div>
+  <!-- Botões -->
+    <input type= 'reset' name='limpar' value= 'Limpar'
+      class="btn btn-secondary btn-lg btn-block">
+    <button ng-click="cadastrar()"
+      class="btn btn-dark btn-lg btn-block">
+      Cadastrar</button>
+</form>
