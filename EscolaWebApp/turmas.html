@@ -1,0 +1,45 @@
+<form name="turmaForm">
+
+    <!-- Nome -->
+
+    <div class="form-group">
+      <label for='nome'>Nome:</label>
+      <input type='text' ng-model='turma.nome' name='nome' class="form-control" required ng-minlength="5" ng-maxlength="45">
+
+      <div ng-show="turmaForm.nome.$error.required && turmaForm.nome.$dirty" class="alert alert-danger">
+        Por favor, insira o nome da turma!
+      </div>
+
+      <div ng-show="turmaForm.nome.$error.minlength && turmaForm.nome.$dirty" class="alert alert-danger">
+        O nome da turma deve ter, no mínimo, 5 caracteres!
+      </div>
+
+      <div ng-show="turmaForm.nome.$error.maxlength && turmaForm.nome.$dirty" class="alert alert-danger">
+        O nome da turma deve ter, no máximo, 45 caracteres!
+      </div>
+    </div>
+
+    <!-- Botões -->
+    <button type='reset' ng-click="limparBusca()" name='limpar' class="btn btn-secondary btn-lg btn-block">Limpar</button>
+    <button ng-click="listar()" class="btn btn-dark btn-lg btn-block">Listar</button>
+</form>
+
+<!-- Tabela de Turmas -->
+<div>
+  <table class="table table-hover">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col">Código</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Curso</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="turma in turmas">
+        <td scope="row">{{turma.id_turma}}</td>
+        <td scope="row">{{turma.nome}}</td>
+        <td scope="row">{{turma.fk_id_curso}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

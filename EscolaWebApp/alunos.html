@@ -1,27 +1,28 @@
-<!-- Aluno - Formulário -->
-<form name="alunosForm">
-  <div class="form-group">
+<form name="alunoForm">
+
     <!-- Nome -->
-    <label for='nome'> Nome: </label>
-    <input type='text' name='nome' class="form-control" ng-model="aluno.nome" ng-minlength="3" ng-maxlength="25">
-    <div>
-      <div ng-show="alunoForm.nome.$error.minlength && alunoForm.nome.$dirty" class="alert alert-danger">
-        Por favor, o Nome não tem o tamanho mínimo válido!
+
+    <div class="form-group">
+      <label for='nome'>Nome do aluno:</label>
+      <input type='text' ng-model='aluno.nome' name='nome' class="form-control" required ng-minlength="10" ng-maxlength="45">
+
+      <div ng-show="alunoForm.nome.$error.required && alunoForm.nome.$dirty" class="alert alert-danger">
+        Por favor, insira o nome do aluno!
       </div>
+
+      <div ng-show="alunoForm.nome.$error.minlength && alunoForm.nome.$dirty" class="alert alert-danger">
+        Seu nome deve conter, no mínimo, 10 caracteres!
+      </div>
+
       <div ng-show="alunoForm.nome.$error.maxlength && alunoForm.nome.$dirty" class="alert alert-danger">
-        Por favor, o Nome não tem o tamanho máximo válido!
+        Seu nome deve conter, no máximo, 45 caracteres!
       </div>
     </div>
-  </div>
 
-  <!-- Botões -->
-  <button type='reset' ng-click="limparBusca()" name='limpar' class="btn btn-secondary btn-lg btn-block">
-    Limpar
-  </button>
-  <button ng-click="listar()" class="btn btn-dark btn-lg btn-block">
-    Listar
-  </button>
-</form>
+    <!-- Botões -->
+    <button type='reset' ng-click="limparBusca()" name='limpar' class="btn btn-secondary btn-lg btn-block">Limpar</button>
+    <button ng-click="listar()" class="btn btn-dark btn-lg btn-block">Listar</button>
+ </form>
 
 <!-- Tabela de Alunos -->
 <div>
@@ -39,7 +40,7 @@
     </thead>
     <tbody>
       <tr ng-repeat="aluno in alunos">
-        <td scope="row">{{aluno.id}}</td>
+        <td scope="row">{{aluno.id_aluno}}</td>
         <td scope="row">{{aluno.nome}}</td>
         <td scope="row">{{aluno.cpf}}</td>
         <td scope="row">{{aluno.matricula}}</td>
