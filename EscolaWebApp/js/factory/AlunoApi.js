@@ -6,9 +6,9 @@ var alunoFactory = function($http) {
     return $http.post(baseUrl + "/aluno", aluno);
   };
 
-  var _atualizar = function(aluno){
-    return $http.post(baseUrl + "/aluno/" + encodeURI(id), aluno)
-  };
+//  var _atualizar = function(aluno){
+//    return $http.post(baseUrl + "/aluno/" + encodeURI(id), aluno)
+//  };
 
   var _listar = function() {
     return $http.get(baseUrl + "/alunos");

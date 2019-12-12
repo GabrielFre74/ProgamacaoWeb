@@ -1,4 +1,4 @@
-var cursoController = function($scope, $mdToast, cursoApi){
+var cursoController = function($scope, $mdToast, $state, cursoApi){
 
   $scope.curso = {};
 
@@ -7,13 +7,16 @@ var cursoController = function($scope, $mdToast, cursoApi){
     let curso = angular.copy($scope.curso);
 
     // Limpar formulário.
-    limparFormulario();
+    //limparFormulario();
 
     // Redirecionamento de página.
-    $state.transitionTo('cursos', {reload: true, inherit: false, notify: true});
 
     cursoApi.cadastrar(curso)
       .then(function(response) {
+      limparFormulario();
+
+      $state.transitionTo('cursos', {reload: true, inherit: false, notify: true});
+
         console.log(response)
         var toast = $mdToast.simple()
             .textContent('Curso cadastrado com sucesso!')
@@ -22,7 +25,6 @@ var cursoController = function($scope, $mdToast, cursoApi){
             .hideDelay(6000);
         $mdToast.show(toast);
 
-        limparFormulario();
       })
       .catch(function(error) {
         console.log(error)

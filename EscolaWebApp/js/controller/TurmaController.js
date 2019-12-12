@@ -1,4 +1,4 @@
-var turmaController = function($scope, $mdToast, turmaApi) {
+var turmaController = function($scope, $mdToast, $state, turmaApi) {
 
   $scope.turma = {};
 
@@ -12,6 +12,9 @@ var turmaController = function($scope, $mdToast, turmaApi) {
 
     turmaApi.cadastrar(turma)
       .then(function(response) {
+        limparFormulario();
+
+        $state.transitionTo('turmas', {reload:true, inherit: false, notify: true});
         var toast = $mdToast.simple()
             .textContent('O turma foi cadastrado com sucesso!')
             .position('top right')
@@ -19,7 +22,6 @@ var turmaController = function($scope, $mdToast, turmaApi) {
             .hideDelay(6000);
         $mdToast.show(toast);
 
-        limparFormulario();
       })
       .catch(function(error) {
         var toast = $mdToast.simple()

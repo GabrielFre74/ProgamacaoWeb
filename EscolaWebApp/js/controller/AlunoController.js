@@ -1,4 +1,4 @@
-var alunoController = function($scope, $mdToast, alunoApi) {
+var alunoController = function($scope, $mdToast, $state, alunoApi) {
 
   $scope.aluno = {};
 
@@ -12,6 +12,9 @@ var alunoController = function($scope, $mdToast, alunoApi) {
 
     alunoApi.cadastrar(aluno)
       .then(function(response) {
+        limparFormulario();
+
+        $state.transitionTo('alunos', {reload:true, inherit: false, notify: true});
         var toast = $mdToast.simple()
             .textContent('O aluno foi cadastrado com sucesso!')
             .position('top right')
@@ -19,7 +22,7 @@ var alunoController = function($scope, $mdToast, alunoApi) {
             .hideDelay(6000);
         $mdToast.show(toast);
 
-        limparFormulario();
+
       })
       .catch(function(error) {
         var toast = $mdToast.simple()

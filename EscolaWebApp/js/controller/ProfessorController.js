@@ -1,4 +1,4 @@
-var professorController = function($scope, $mdToast, professorApi) {
+var professorController = function($scope, $mdToast, $state, professorApi) {
 
   $scope.professor = {};
 
@@ -12,6 +12,10 @@ var professorController = function($scope, $mdToast, professorApi) {
 
     professorApi.cadastrar(professor)
       .then(function(response) {
+        limparFormulario();
+
+        $state.transitionTo('professores', {reload:true, inherit: false, notify: true});
+
         var toast = $mdToast.simple()
             .textContent('O professor foi cadastrado com sucesso!')
             .position('top right')
@@ -19,7 +23,6 @@ var professorController = function($scope, $mdToast, professorApi) {
             .hideDelay(6000);
         $mdToast.show(toast);
 
-        limparFormulario();
       })
       .catch(function(error) {
         var toast = $mdToast.simple()

@@ -1,4 +1,4 @@
-var disciplinaController = function($scope, $mdToast, disciplinaApi){
+var disciplinaController = function($scope, $mdToast, $state, disciplinaApi){
 
   $scope.disciplina = {};
 
@@ -7,13 +7,15 @@ var disciplinaController = function($scope, $mdToast, disciplinaApi){
     let disciplina = angular.copy($scope.disciplina);
 
     // Limpar formulário.
-    limparFormulario();
+    //limparFormulario();
 
     // Redirecionamento de página.
-    $state.transitionTo('disciplinas', {reload: true, inherit: false, notify: true});
-
     disciplinaApi.cadastrar(disciplina)
       .then(function(response) {
+
+        limparFormulario();
+        $state.transitionTo('disciplinas', {reload: true, inherit: false, notify: true});
+
         console.log(response)
         var toast = $mdToast.simple()
             .textContent('Disciplina cadastrada com sucesso!')
@@ -22,7 +24,6 @@ var disciplinaController = function($scope, $mdToast, disciplinaApi){
             .hideDelay(6000);
         $mdToast.show(toast);
 
-        limparFormulario();
       })
       .catch(function(error) {
         console.log(error)

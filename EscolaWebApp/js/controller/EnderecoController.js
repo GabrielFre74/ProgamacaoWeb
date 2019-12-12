@@ -1,4 +1,4 @@
-var enderecoController = function($scope, $mdToast, enderecoApi){
+var enderecoController = function($scope, $mdToast, $state, enderecoApi){
 
   $scope.endereco = {};
 
@@ -7,13 +7,14 @@ var enderecoController = function($scope, $mdToast, enderecoApi){
     let endereco = angular.copy($scope.endereco);
 
     // Limpar formulário.
-    limparFormulario();
+    //limparFormulario();
 
     // Redirecionamento de página.
-    $state.transitionTo('enderecos', {reload: true, inherit: false, notify: true});
-
     enderecoApi.cadastrar(endereco)
       .then(function(response) {
+        limparFormulario();
+        $state.transitionTo('enderecos', {reload: true, inherit: false, notify: true});
+
         console.log(response)
         var toast = $mdToast.simple()
             .textContent('Endereço cadastrado com sucesso!')
@@ -22,7 +23,6 @@ var enderecoController = function($scope, $mdToast, enderecoApi){
             .hideDelay(6000);
         $mdToast.show(toast);
 
-        limparFormulario();
       })
       .catch(function(error) {
         console.log(error)

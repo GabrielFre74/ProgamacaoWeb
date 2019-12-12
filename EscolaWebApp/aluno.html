@@ -68,26 +68,19 @@
         Por favor, insira sua data de nascimento!
       </div>
 
-      <div ng-show="alunoForm.nascimento.$error.minlength && alunoForm.nascimento.$dirty" class="alert alert-danger">
-        Sua data de nascimento deve seguir o seguinte formato: AAAA-MM-DD
-      </div>
-
-      <div ng-show="alunoForm.nascimento.$error.maxlength && alunoForm.nascimento.$dirty" class="alert alert-danger">
-        Sua data de nascimento deve seguir o seguinte formato: AAAA-MM-DD
-      </div>
     </div>
 
     <!-- ID Endereço -->
 
     <div class="form-group">
-      <label for='nascimento'> Número de Idenficação do Endereço: </label>
-      <input type='text' ng-model='aluno.fk_id_endereco' name='id_endereco' class="form-control" required ng-minlength="1">
+      <label for='endereco'> Número de Idenficação do Endereço: </label>
+      <input type='text' ng-model='aluno.id_endereco' name='id_endereco' class="form-control" required ng-minlength="1">
 
-      <div ng-show="alunoForm.fk_id_endereco.$error.required && alunoForm.fk_id_endereco.$dirty" class="alert alert-danger">
+      <div ng-show="alunoForm.id_endereco.$error.required && alunoForm.id_endereco.$dirty" class="alert alert-danger">
         Por favor, insira o número de idenficação do seu endereco!
       </div>
 
-      <div ng-show="alunoForm.fk_id_endereco.$error.minlength && alunoForm.fk_id_endereco.$dirty" class="alert alert-danger">
+      <div ng-show="alunoForm.id_endereco.$error.minlength && alunoForm.id_endereco.$dirty" class="alert alert-danger">
         O número deve conter, no mínimo, um caractere!
       </div>
     </div>
@@ -95,18 +88,18 @@
     <!-- ID Curso -->
 
     <div class="form-group">
-      <label for='nascimento'> Número de Idenficação do Curso: </label>
-      <input type='text' ng-model='aluno.fk_id_curso' name='id_curso' class="form-control" required ng-minlength="1" ng-maxlength="10">
+      <label for='curso'> Número de Idenficação do Curso: </label>
+      <input type='text' ng-model='aluno.id_curso' name='id_curso' class="form-control" required ng-minlength="1" ng-maxlength="10">
 
-      <div ng-show="alunoForm.fk_id_curso.$error.required && alunoForm.fk_id_curso.$dirty" class="alert alert-danger">
+      <div ng-show="alunoForm.id_curso.$error.required && alunoForm.id_curso.$dirty" class="alert alert-danger">
         Por favor, insira o número de idenficação do curso!
       </div>
 
-      <div ng-show="alunoForm.fk_id_curso.$error.minlength && alunoForm.fk_id_curso.$dirty" class="alert alert-danger">
+      <div ng-show="alunoForm.id_curso.$error.minlength && alunoForm.id_curso.$dirty" class="alert alert-danger">
         O número deve conter, no mínimo, um caractere!
       </div>
 
-      <div ng-show="alunoForm.fk_id_curso.$error.maxlength && alunoForm.fk_id_curso.$dirty" class="alert alert-danger">
+      <div ng-show="alunoForm.id_curso.$error.maxlength && alunoForm.id_curso.$dirty" class="alert alert-danger">
         O número deve conter, no mínimo, dez caracteres!
       </div>
     </div>

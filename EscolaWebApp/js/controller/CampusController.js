@@ -1,4 +1,4 @@
-var campusController = function($scope, $mdToast, campusApi){
+var campusController = function($scope, $state, $mdToast, campusApi){
 
   $scope.campus = {};
 
@@ -7,14 +7,16 @@ var campusController = function($scope, $mdToast, campusApi){
     let campus = angular.copy($scope.campus);
 
     // Limpar formulário.
-    limparFormulario();
-
-    // Redirecionamento de página.
-    $state.transitionTo('campi', {reload: true, inherit: false, notify: true});
+    //limparFormulario();
 
     campusApi.cadastrar(campus)
       .then(function(response) {
+        limparFormulario();
+
+        $state.transitionTo('campi', {reload:true, inherit: false, notify: true});
+
         console.log(response)
+
         var toast = $mdToast.simple()
             .textContent('Campus cadastrado com sucesso!')
             .position('bottom left')
@@ -22,7 +24,6 @@ var campusController = function($scope, $mdToast, campusApi){
             .hideDelay(6000);
         $mdToast.show(toast);
 
-        limparFormulario();
       })
       .catch(function(error) {
         console.log(error)

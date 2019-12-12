@@ -7,13 +7,14 @@ var escolaController = function($scope, $mdToast, escolaApi){
     let escola = angular.copy($scope.escola);
 
     // Limpar formulário.
-    limparFormulario();
+    //limparFormulario();
 
     // Redirecionamento de página.
-    $state.transitionTo('escolas', {reload: true, inherit: false, notify: true});
 
     escolaApi.cadastrar(escola)
       .then(function(response) {
+        limparFormulario();
+        $state.transitionTo('escolas', {reload: true, inherit: false, notify: true});
         console.log(response)
         var toast = $mdToast.simple()
             .textContent('Escola cadastrada com sucesso!')
@@ -22,7 +23,6 @@ var escolaController = function($scope, $mdToast, escolaApi){
             .hideDelay(6000);
         $mdToast.show(toast);
 
-        limparFormulario();
       })
       .catch(function(error) {
         console.log(error)

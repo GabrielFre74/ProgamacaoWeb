@@ -1,4 +1,4 @@
-var turnoController = function($scope, $mdToast, turnoApi){
+var turnoController = function($scope, $mdToast, $state, turnoApi){
 
   $scope.turno = {};
 
@@ -6,14 +6,11 @@ var turnoController = function($scope, $mdToast, turnoApi){
     // Criar uma cópia do turno do $scope.
     let turno = angular.copy($scope.turno);
 
-    // Limpar formulário.
-    limparFormulario();
-
-    // Redirecionamento de página.
-    $state.transitionTo('turnos', {reload: true, inherit: false, notify: true});
 
     turnoApi.cadastrar(turno)
       .then(function(response) {
+        limparFormulario();
+        $state.transitionTo('turnos', {reload: true, inherit: false, notify: true});
         console.log(response)
         var toast = $mdToast.simple()
             .textContent('Turno cadastrado com sucesso!')
@@ -22,7 +19,6 @@ var turnoController = function($scope, $mdToast, turnoApi){
             .hideDelay(6000);
         $mdToast.show(toast);
 
-        limparFormulario();
       })
       .catch(function(error) {
         console.log(error)
