@@ -4,18 +4,18 @@ var campiController = function($scope, $mdToast, campusApi) {
 
   $scope.listar = function() {
     console.log("Listando")
-    alunoApi.listar()
+    campusApi.listar()
       .then(function(response) {
-        $scope.alunos = response.data;
+        $scope.campi = response.data;
       })
       .catch(function(error) {
 
       });
   };
 
-  $scope.pesquisar = function(nome) {
+  $scope.pesquisar = function(sigla) {
     if (sigla.length >= 2) {
-      alunoApi.buscarPorNome(nome)
+      campusApi.buscarPorSigla(sigla)
         .then(function(response) {
           $scope.campi = response.data;
         })
@@ -26,8 +26,8 @@ var campiController = function($scope, $mdToast, campusApi) {
   };
 
   $scope.limparBusca = function() {
-    $scope.nome = "";
-    $scope.alunos = [];
+    $scope.sigla = "";
+    $scope.campi = [];
   };
 
 }

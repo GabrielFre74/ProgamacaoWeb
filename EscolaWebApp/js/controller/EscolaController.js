@@ -1,4 +1,4 @@
-var escolaController = function($scope, $mdToast, escolaApi){
+var escolaController = function($scope, $mdToast, $state, escolaApi){
 
   $scope.escola = {};
 
