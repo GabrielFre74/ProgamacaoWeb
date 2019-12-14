@@ -5,8 +5,8 @@
   <!-- Nome -->
 
     <div class="form-group">
-      <label for='noe'>Nome:</label>
-      <input type='text' ng-model='nome' name='nome' class="form-control" required ng-minlength="10" ng-maxlength="45">
+      <label for='nome'>Nome:</label>
+      <input type='text' ng-model='professor.nome' name='nome' class="form-control" required ng-minlength="10" ng-maxlength="45">
 
       <div ng-show="professorForm.nome.$error.required && professorForm.nome.$dirty" class="alert alert-danger">
         Por favor, insira o nome do professor!
@@ -24,14 +24,14 @@
     <!-- ID Endereço -->
 
     <div class="form-group">
-      <label for='noe'>Número de Identificação do Endereço:</label>
-      <input type='text' ng-model='professor.fk_id_endereco' name='nome' class="form-control" required ng-minlength="1">
+      <label for='endereco'>Número de Identificação do Endereço:</label>
+      <input type='text' ng-model='professor.id_endereco' name='id_endereco' class="form-control" required ng-minlength="1">
 
-      <div ng-show="professorForm.fk_id_endereco.$error.required && professorForm.fk_id_endereco.$dirty" class="alert alert-danger">
+      <div ng-show="professorForm.id_endereco.$error.required && professorForm.id_endereco.$dirty" class="alert alert-danger">
         Por favor, insira o número de identificação do endereco!
       </div>
 
-      <div ng-show="professorForm.fk_id_endereco.$error.minlength && professorForm.fk_id_endereco.$dirty" class="alert alert-danger">
+      <div ng-show="professorForm.id_endereco.$error.minlength && professorForm.id_endereco.$dirty" class="alert alert-danger">
         O número deve ter, no mínimo, 1 caracteres!
       </div>
     </div>
