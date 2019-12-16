@@ -16,7 +16,7 @@ var turmaController = function($scope, $mdToast, $state, turmaApi) {
 
         $state.transitionTo('turmas', {reload:true, inherit: false, notify: true});
         var toast = $mdToast.simple()
-            .textContent('O turma foi cadastrado com sucesso!')
+            .textContent('Turma cadastrado com sucesso!')
             .position('top right')
             .action('OK')
             .hideDelay(6000);

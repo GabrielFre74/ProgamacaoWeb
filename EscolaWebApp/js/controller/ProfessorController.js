@@ -17,7 +17,7 @@ var professorController = function($scope, $mdToast, $state, professorApi) {
         $state.transitionTo('professores', {reload:true, inherit: false, notify: true});
 
         var toast = $mdToast.simple()
-            .textContent('O professor foi cadastrado com sucesso!')
+            .textContent('Professor cadastrado com sucesso!')
             .position('top right')
             .action('OK')
             .hideDelay(6000);
